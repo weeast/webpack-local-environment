@@ -1,7 +1,5 @@
 node_modules/
 src/js/vendor/zrender/
-src/js/vendor/jquery/src/css/var/rmargin.js
-src/js/vendor/jquery/src/css/var/rnumnonpx.js
 src/js/vendor/jquery/
 src/js/vendor/echarts/
 src/js/vendor/mockjs/
