@@ -1,0 +1,41 @@
+.ui-table-container(class="#{site}")
+    table.ui-table
+        thead
+            tr
+                th(width="160") 排名
+                th(width="130") 召唤师名称
+                th(width="") 段位
+                    i.rank
+                th(width="160") 胜点
+                th(width="80") 排位场次
+                    i.rank
+                th(width="140") 胜率
+                    i.rank
+                th.hero-title 常用英雄
+        tbody
+            -var list = [1,2,3,4,5,6,7,8,9,0];
+            each item, i in list
+                if i%2 == 1
+                    -var order = 'odd'
+                else
+                    -var order = 'even'
+                tr(class="#{order}")
+                    td #{i+1}
+                    td
+                        .info
+                            img.picture(src="http://placehold.it/30x30")
+                            span.name xxx
+                    td
+                        .rank
+                            img.picture(src="http://placehold.it/30x30")
+                            span.call 最强王者
+                    td.winpoint 240
+                    td.gametimes 240
+                    td.winrate 24
+                    td.heros
+                        .hero-items
+                            img.hero(src="http://placehold.it/30x30")
+                            img.hero(src="http://placehold.it/30x30")
+                            img.hero(src="http://placehold.it/30x30")
+                            img.hero(src="http://placehold.it/30x30")
+                            img.hero(src="http://placehold.it/30x30")

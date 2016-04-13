@@ -1,0 +1,14 @@
+doctype html
+html(lang='en')
+    head
+        title #{title} components units test
+body
+    h1 #{title} Index
+    h2 Pages
+    ul
+        each page in pages
+            li: a(href=page) #{page}
+    h2 Components
+    ul
+        each component in components
+            li: a(href="/__test__/#{component}.html") #{component}

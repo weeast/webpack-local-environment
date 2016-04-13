@@ -1,0 +1,20 @@
+.header(class="#{site}")
+    .fn-wrap
+        .logo
+            a(href="#"): img(src="#{_static}/images/logo.png", alt="CARRY6")
+        .ui-nav
+            ul.ui-nav-main
+                li.ui-nav-item.ui-nav-item-current
+                    a(href="#{_host}/search") 个人数据
+                li.ui-nav-item
+                    a(href="#{_host}/players/rank/?page=1&areaId=1") 国服王者
+                li.ui-nav-item
+                    a(href="#{_host}/heroes/trend") 英雄趋势
+                //- li.ui-nav-item
+                //-     a(href="#") 物品统计
+                //- li.ui-nav-item
+                //-     a(href="#") 大区统计
+        .btn-items
+            a.ui-btn.ui-btn-login(href="#") 登陆
+            i.line
+            a.ui-btn.ui-btn-regist(href="#") 注册

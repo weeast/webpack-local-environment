@@ -1,0 +1,114 @@
+@import "../../../less/_mixins.less";
+@import "../../../less/_variables.less";
+@import "../../../less/font.less";
+
+.header{
+    .size(100%,52px);
+    &.lol{
+        border-top: 2px solid @hr-border-drakgreen;
+        .box-shadow(1px 0 15px 3px @opacity-darkgreen);
+        background: url(images/nav_bg_lol.png) no-repeat;
+    }
+    &.dota{
+        border-top: 2px solid #652833;
+        .box-shadow(1px 0 15px 3px rgba(202,15,15,.22));
+        background: url(images/nav_bg_dota2.png) no-repeat;
+    }
+    .fn-wrap{
+        height: 50px;
+        .clearfix();
+        .logo{
+            float: left;
+            .size(250px,100%);
+            a{
+                line-height: 50px;
+                img{
+                    margin: -2px 0 0 45px;
+                    vertical-align: top;
+                }
+            }
+        }
+        .ui-nav{
+            float: left;
+            .ui-nav-main{
+                .clearfix;
+            }
+            .ui-nav-item{
+                float: left;
+                .size(110px, 50px);
+                line-height: 45px;
+                margin: 0 5px;
+                text-align: center;
+                a{
+                    display: inline-block;
+                    .size(100%, 100%);
+                    text-shadow: 1px 1.73px 1px @opacity-darkblue;
+                }
+                .lol&{
+                    a{
+                        .font-h4();
+                    }
+                    &:hover,
+                    &.ui-nav-item-current{
+                        border-top: 2px solid @hr-border-lightblue;
+                        background: url(images/nav_hover_bg_lol.png) no-repeat;
+                    }
+                }
+                .dota&{
+                    a{
+                        .font-h4(#faf3e4);
+                    }
+                    &:hover,
+                    &.ui-nav-item-current{
+                        border-top: 2px solid #ca0f26;
+                        background: url(images/nav_hover_bg_dota2.png) no-repeat;
+                    }
+                }
+                &:hover,
+                &.ui-nav-item-current{
+                    margin-top: -2px;
+                    height: 52px;
+                    a{
+                        color: @text-color-light;
+                    }
+                }
+            }
+        }
+        .btn-items{
+            float: right;
+            height: 100%;
+            line-height: 50px;
+            .line{
+                display: inline-block;
+                height: 15px;
+                vertical-align: middle;
+                
+                margin: 0 18px;
+            }
+            .lol&{
+                .ui-btn{
+                    .font-text-graygreen();
+                    &:hover{
+                        color: lighten(@text-color-graygreen, 20%);
+                    }
+                }
+                .line{
+                    border-right: 1px solid @text-color-graygreen;
+                    border-left: 1px solid darken(@text-color-graygreen,20%); 
+                }
+            }
+            .dota&{
+                .ui-btn{
+                    .font-text-grayred();
+                    &:hover{
+                        color: lighten(@text-color-grayred, 20%);
+                    }
+                }
+                .line{
+                    border-right: 1px solid @text-color-grayred;
+                    border-left: 1px solid darken(@text-color-grayred,20%); 
+                }
+            }
+        }
+    }    
+}

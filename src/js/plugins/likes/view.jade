@@ -1,0 +1,52 @@
+
+//- <div class="likes">
+//- 	<a href="javascript:;" class="likes-btn-add likes-first-party"><span>+</span></a>
+//- 	<div class="progress">
+//- 		<div class="progress-first-party">
+//- 			<div class="axis"></div>
+//- 			<div class="progress-bar"></div>
+//- 			<i class="icon-sword"></i>
+//- 			<div class="likes-count">
+//- 				<s></s>
+//- 				<label>100,000</label>
+//- 			</div>
+//- 		</div>
+//- 		<div class="progress-second-party">
+//- 			<div class="axis"></div>
+//- 			<div class="progress-bar"></div>
+//- 			<div class="likes-count">
+//- 				<s></s>
+//- 				<label>100,000</label>
+//- 			</div>
+//- 		</div>
+//- 	</div>
+//- 	<a href="javascript:;" class="likes-btn-add likes-second-party"><span>+</span></a>
+//- </div>
+
+.md-likes(class="#{className}")
+	-var IDKey = dataKey.id;
+	-var ValKey = dataKey.val;
+	-var dataID = data ? (data[0] ? (data[0][IDKey] ? data[0][IDKey] : 0) : 0) : 0;
+	-var dataValue = data ? (data[0] ? (data[0].value ? data[0].value : 0) : 0) : 0;
+	a.likes-btn-add.likes-first-party.J-likes-first-party.J-likes-add(href="javascript:;", data-id="#{dataID}", data-val="#{dataValue}")
+		span +
+	.progress
+		.progress-first-party.J-progress-target
+			.axis
+			.progress-bar
+			i.icon-sword
+			.likes-count
+				s
+				label.J-progress-label1 0
+		.progress-second-party
+			.axis
+			.progress-bar
+			i.icon-sword
+			.likes-count
+				s
+				label.J-progress-label2 0
+	-var dataID = data ? (data[1] ? (data[1][IDKey] ? data[1][IDKey] : 0) : 0) : 0;
+	-var dataValue = data ? (data[1] ? (data[1][ValKey] ? data[1][ValKey] : 0) : 0) : 0;
+	a.likes-btn-add.likes-second-party.J-likes-second-party.J-likes-add(href="javascript:;", data-id="#{dataID}", data-val="#{dataValue}")
+		span +
+

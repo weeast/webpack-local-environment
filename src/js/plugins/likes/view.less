@@ -1,0 +1,200 @@
+@charset "utf-8";
+
+@import "../../../less/_mixins.less";
+
+/**
+ * 效果过度
+ * @shadow (property duration timing-function delay)
+ *      property       :规定设置过渡效果的 CSS 属性的名称。
+ *      duration       :规定完成过渡效果需要多少秒或毫秒。
+ *      timing-function:规定速度效果的速度曲线。
+ *      delay          :定义过渡效果何时开始。
+ */
+.transition(@transition: all .2s ease .2s){
+    -webkit-transition: @transition;
+       -moz-transition: @transition;
+         -o-transition: @transition;
+            transition: @transition;
+}
+
+.md-likes{
+	width: 100%;
+	height: 50px;
+	position: relative;
+	.clearfix();
+
+	.likes-btn-add{
+		width: 40px;
+		height: 40px;
+		line-height: 37px;
+		margin-top: 5px;
+		overflow: hidden;
+		text-align: center;
+		text-decoration: none;
+		.border-radius(40px);
+
+		span{
+			color: #fff;
+			font-size: 30px;
+			font-weight: bold;
+		}
+
+		&.likes-first-party{
+			background-color: #161e7b;
+			float: left;
+			margin-left: 15px;
+		}
+
+		&.likes-second-party{
+			background-color: #752809;
+			float: right;
+			margin-right: 15px;
+		}
+	}
+
+	.progress{
+		position: absolute;
+		left: 70px;
+		right: 70px;
+		top: 10px;
+		bottom: 1px;
+
+		.axis{
+			width: 100%;
+			height: 2px;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			margin-top: -4px;
+		}
+
+		.progress-bar{
+			height: 2px;
+			position: absolute;
+			top: 50%;
+			left: 15px;
+			right: 15px;
+			margin-top: -6px;
+		}
+
+		.likes-count {
+			position:absolute;
+			top: -10px;
+			left: -6px;
+			float: left;
+			padding: 2px;
+			font-size: 12px;
+			background-color: rgba(34, 39, 54, 0.8);
+			.border-radius(3px);
+
+			s {
+				position:absolute;
+				top: 18px;
+				left:50%;
+				margin-left: -5px;
+				display:block;
+				height:0;
+				width:0;
+				font-size: 0;
+				line-height: 0;
+				border-color: #222736 transparent transparent transparent;
+				border-style:dashed dashed solid dashed;
+				border-width: 5px;
+			}
+		}
+
+		.progress-first-party{
+			position: absolute;
+			z-index: 10;
+			width: 50%;
+			min-width: 2.5%;
+			height: 100%;
+			left: 0;
+			right: 0;
+			.transition(width .5s ease-in);
+
+			.axis{
+				width: auto;
+				right: 10px;
+				border-top: 2px solid #264ce6;
+			}
+			.progress-bar{
+				width: auto;
+				right: 10px;
+				border-top: 6px solid #264ce6;
+			}
+			.icon-sword{
+				display: block;
+				width: 22px;
+				height: 22px;
+				position: absolute;
+				right: 0px;
+				top: 4px;
+				background: url('images/icon-sword.png') no-repeat 1px 2px;
+			}
+			.likes-count{
+				color: #264ce6;
+			}
+		}
+		.progress-second-party{
+			position: absolute;
+			z-index: 9;
+			width: 100%;
+			height: 100%;
+
+			.axis{
+				border-top: 2px solid #e67f2b;
+			}
+			.progress-bar{
+				border-top: 6px solid #e67f2b;
+			}
+			.likes-count{
+				background-color: rgba(46, 31, 32, 0.8);
+				color: #e67f2b;
+				left: inherit;
+				right: -6px;
+
+				s{
+					border-color: #2e1f20 transparent transparent transparent;
+				}
+			}
+		}
+	}
+
+
+	&.md-likes-lol{
+		.likes-first-party{
+			background-color: #34855e;
+		}
+		.likes-second-party{
+			background-color: #a68751;
+		}
+		.progress-first-party{
+			.axis{
+				border-top: 2px solid #2fa475;
+			}
+			.progress-bar{
+				border-top: 6px solid #34855e;
+			}
+			.likes-count{
+				background-color: rgba(30, 47, 29, 0.8);
+				color: #26b16e;
+				s{
+					border-color: #1e2f1d transparent transparent transparent;
+				}
+			}
+		}		
+		.progress-second-party{
+			.axis{
+				border-top: 2px solid #f69c0f;
+			}
+			.progress-bar{
+				border-top: 6px solid #c88e17;
+			}
+			.likes-count{
+				background-color: rgba(46, 31, 32, 0.8);
+				color: #deb66c;
+			}
+		}
+	}
+}

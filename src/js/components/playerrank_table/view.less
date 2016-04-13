@@ -1,0 +1,75 @@
+@import "../../../less/_mixins.less";
+@import "../../../less/_variables.less";
+@import "../../../less/font.less";
+
+.ui-table-container{
+    .ui-table{
+        width: 100%;
+        
+        .font-text-light();
+        a{
+            .font-text-light;
+        }
+        text-align: center;
+
+        border: 1px solid #4d6373;
+        background: fadeout(#222830, 70%);
+        thead{
+            th{
+                .lol&{
+                    .font-text-darkgray();
+                }
+                .dota2&{
+                    .font-text-lightgray();
+                }
+                .rank{
+                    display: none;
+                    .size(9px, 5px);
+                    
+                    margin-left: 5px;
+
+                    background: url(images/arrow_down.png) no-repeat;
+                }
+            }
+        }
+        tr{
+            height: 40px;
+            line-height: 40px;
+            &.even{
+                background: lighten(#14171b, 20%);
+                background: fadeout(#14171b, 70%);
+            }
+            .info{
+                height: 40px;
+                .picture{
+                    .border-radius(50%);
+                }
+                .name{
+                    display: inline-block;
+                    width: 130px;
+                    .text-overflow();
+                }
+            }
+            .rank{
+                height: 40px;
+                .call{
+                    display: inline-block;
+                    width: 70px;
+                    .text-overflow();
+                }
+            }
+            .hero-items{
+                .hero{
+                    margin-left: 5px;
+                }
+            }
+        }
+        img{
+            display: inline-block;
+            height: 30px;
+            vertical-align: top;
+            margin-top: 5px;
+            line-height: 0
+        }
+    }
+}
